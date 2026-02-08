@@ -1,0 +1,16 @@
+# Data & model weights
+data/
+*.pth
+
+# Pants
+.pants.d/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# IDE
+.idea/
+.vscode/
