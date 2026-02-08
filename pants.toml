@@ -1,5 +1,5 @@
 [GLOBAL]
-pants_version = "2.30.0"
+pants_version = "2.30.1"
 backend_packages = [
   "pants.backend.python",
 ]
@@ -10,16 +10,31 @@ root_patterns = ["/"]
 [python]
 interpreter_constraints = ["CPython==3.12.*"]
 enable_resolves = true
-default_resolve = "linux"
+default_resolve = "split"
+pip_version = "latest-compatible"
 
 [python.resolves]
-linux = "3rdparty/python/linux.lock"
-macos = "3rdparty/python/macos.lock"
+split = "3rdparty/python/split.lock"
+
+[python.resolves_to_sources]
+split = [
+  "pytorch_cpu=torch; sys_platform == 'linux'",
+  "pytorch_cpu=torchvision; sys_platform == 'linux'"
+]
 
 [python-repos]
 indexes = [
   "https://pypi.org/simple/",
-  "https://download.pytorch.org/whl/cpu",
+  "pytorch_cpu=https://download.pytorch.org/whl/cpu",
+]
+
+[pex-cli]
+version = "v2.69.2"
+known_versions = [
+  "v2.69.2|macos_arm64|ba521d8665bf58f759ce7bf0ebb534a1f1e5006044be2e42e7a298ad4fbd2ec5|4937401",
+  "v2.69.2|macos_x86_64|ba521d8665bf58f759ce7bf0ebb534a1f1e5006044be2e42e7a298ad4fbd2ec5|4937401",
+  "v2.69.2|linux_x86_64|ba521d8665bf58f759ce7bf0ebb534a1f1e5006044be2e42e7a298ad4fbd2ec5|4937401",
+  "v2.69.2|linux_arm64|ba521d8665bf58f759ce7bf0ebb534a1f1e5006044be2e42e7a298ad4fbd2ec5|4937401"
 ]
 
 [generate-lockfiles]
