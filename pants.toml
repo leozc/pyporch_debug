@@ -10,6 +10,7 @@ root_patterns = ["/"]
 [python]
 interpreter_constraints = ["CPython==3.12.*"]
 enable_resolves = true
+pip_version = "25.3"
 
 [python.resolves]
 python-default = "3rdparty/python/default.lock"
