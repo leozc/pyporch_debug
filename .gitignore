@@ -2,6 +2,9 @@
 data/
 *.pth
 
+# QR code output
+qr_codes/
+
 # Pants
 .pants.d/
 dist/

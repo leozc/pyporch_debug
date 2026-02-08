@@ -1,13 +1,25 @@
-python_sources(name="lib")
-
-pex_binary(
-    name="train",
-    entry_point="train.py",
-    execution_mode="venv",
+python_sources(
+    name="lib",
+    resolve=parametrize("linux", "macos"),
 )
 
 pex_binary(
-    name="predict",
-    entry_point="predict.py",
+    name="generate",
+    entry_point="generate_qr.py",
     execution_mode="venv",
+    resolve=parametrize("linux", "macos"),
+)
+
+pex_binary(
+    name="detect",
+    entry_point="detect_qr.py",
+    execution_mode="venv",
+    resolve=parametrize("linux", "macos"),
+)
+
+pex_binary(
+    name="demo",
+    entry_point="demo_qr.py",
+    execution_mode="venv",
+    resolve=parametrize("linux", "macos"),
 )

@@ -1,2 +1,5 @@
 torch
 torchvision
+qreader
+qrcode[pil]
+opencv-python

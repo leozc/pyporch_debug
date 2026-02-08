@@ -10,9 +10,11 @@ root_patterns = ["/"]
 [python]
 interpreter_constraints = ["CPython==3.12.*"]
 enable_resolves = true
+default_resolve = "linux"
 
 [python.resolves]
-python-default = "3rdparty/python/default.lock"
+linux = "3rdparty/python/linux.lock"
+macos = "3rdparty/python/macos.lock"
 
 [python-repos]
 indexes = [
