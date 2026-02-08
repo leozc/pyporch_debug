@@ -1,7 +1,3 @@
-# Data & model weights
-data/
-*.pth
-
 # QR code output
 qr_codes/
 
