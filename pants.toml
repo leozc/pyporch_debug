@@ -1,5 +1,5 @@
 [GLOBAL]
-pants_version = "2.30.0"
+pants_version = "2.30.1"
 backend_packages = [
   "pants.backend.python",
 ]
@@ -10,16 +10,21 @@ root_patterns = ["/"]
 [python]
 interpreter_constraints = ["CPython==3.12.*"]
 enable_resolves = true
-default_resolve = "linux"
 
 [python.resolves]
-linux = "3rdparty/python/linux.lock"
-macos = "3rdparty/python/macos.lock"
+python-default = "3rdparty/python/default.lock"
+
+# Platform-specific index: use CPU-only PyTorch for Linux only
+[python.resolves_to_sources]
+python-default = [
+    "pytorch_cpu=torch; sys_platform == 'linux'",
+    "pytorch_cpu=torchvision; sys_platform == 'linux'",
+]
 
 [python-repos]
 indexes = [
   "https://pypi.org/simple/",
-  "https://download.pytorch.org/whl/cpu",
+  "pytorch_cpu=https://download.pytorch.org/whl/cpu",
 ]
 
 [generate-lockfiles]
