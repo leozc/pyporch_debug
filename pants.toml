@@ -1,5 +1,5 @@
 [GLOBAL]
-pants_version = "2.30.0"
+pants_version = "2.30.1"
 backend_packages = [
   "pants.backend.python",
 ]
@@ -25,7 +25,8 @@ python-default = [
 [python-repos]
 indexes = [
   "https://pypi.org/simple/",
-  "buf=https://buf.build/gen/python",
+#  Uncomment the line below will result in "Index names must be unique."
+#  "buf=https://buf.build/gen/python",
   "pytorch_cpu=https://download.pytorch.org/whl/cpu",
 ]
 
