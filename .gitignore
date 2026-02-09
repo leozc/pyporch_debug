@@ -5,6 +5,8 @@ qr_codes/
 .pants.d/
 dist/
 
+.claude/
+
 # Python
 __pycache__/
 *.pyc

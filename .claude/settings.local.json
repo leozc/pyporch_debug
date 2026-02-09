@@ -11,7 +11,9 @@
       "Bash(git -C /home/leozc/git/cipherowl/pyporch_debug diff)",
       "Bash(git add:*)",
       "Bash(git merge:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
     ]
   }
 }
