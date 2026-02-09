@@ -9,7 +9,9 @@
       "Bash(git -C /home/leozc/git/cipherowl/pyporch_debug init)",
       "Bash(git -C /home/leozc/git/cipherowl/pyporch_debug status)",
       "Bash(git -C /home/leozc/git/cipherowl/pyporch_debug diff)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git merge:*)",
+      "Bash(git restore:*)"
     ]
   }
 }
